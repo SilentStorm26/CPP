@@ -1,20 +1,31 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
-ofstream out("rezultat.out");
+int v[10]={1,2,3,4,5,6,0};
+
+void afisv(int p,int sf)
+{
+    if(p<=sf)
+    {
+        cout<<v[p]<<' ';
+        if(p!=sf)
+            return afisv(p+1,sf);
+    }
+}
 
 int main()
 {
-    char s[100],i[100],o[100];
-    cout<<"Introdu numele problemei:\n";
-    cin>>s;
-    cout<<"Introdu numele operatiei de citire:\n";
-    cin>>i;
-    cout<<"Introdu numele operatiei de afisare:\n";
-    cin>>o;
-    out<<"#include <fstream>\n\n"<<"using namespace std;\n\n"<<"ifstream "<<i<<"(\""<<s<<".in\");\n"<<"ofstream "<<o<<"(\""<<s<<".out\");\n";
-    cout<<"Verifica fisierul \"rezultat.out\" ";
+    int st,sf;
+    cin>>st>>sf;
+    cout<<'\n';
+    afisv(st,sf);
     return 0;
 }
+
+/**
+    program de exemplu
+    pentru o functie
+    recursiva de
+    afisat vectori
+**/
